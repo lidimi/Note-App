@@ -7,7 +7,7 @@
 }
 
 :root {
-  --background-color: #16191d;
+  --black: #16191d;
   --off-white: hsl(75deg, 6%, 87%);
   --orange: hsl(42deg, 93%, 64%);
   --blue: #0066FF;
@@ -22,8 +22,13 @@ button {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--black);
   color: var(--off-white);
   font-family: var(--font-main);
   min-height: 100vh;
+  position: relative;
+  background-image: url('./assets/wave-haikei.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Note from "./components/Note";
 import Entry from './components/Entry';
 import AddNote from './components/AddNote';
+import Emoji from './components/Emoji';
 
 function App() {
 
@@ -28,18 +29,19 @@ function App() {
   return (
     <>
       <Navbar handleClick={toggleNoteOpen} />
-      <div className='entry-container'>
-        {notes.length === 0 && !isNoteOpen && 
-        <Entry handleClick={toggleNoteOpen} />}
-        {isNoteOpen && 
-        <AddNote 
-          closeNote={toggleNoteOpen} 
-          addToNotes={addToNotes} 
-        />}
-      </div>
-      <div className='note-container'>
-        {allNotes}
-      </div>
+        {notes.length === 0 && !isNoteOpen && <Entry handleClick={toggleNoteOpen} />}
+        {isNoteOpen && <AddNote closeNote={toggleNoteOpen} addToNotes={addToNotes} />}
+        <div className="notes-todos-container">
+          <div className="notes-container">
+            <h2 className='notes-container__heading'>Your notes <Emoji label="notebook" symbol="📝" /> </h2>
+            <div className='notes-container__grid'>
+            {allNotes}
+            </div>
+          </div>
+          <div className="todos-container">
+            <h2 className='todos-container__heading'>Your todos <Emoji symbol="📌" /></h2>
+          </div>
+        </div>
     </>
   )
 }

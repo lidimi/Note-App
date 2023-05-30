@@ -59,14 +59,15 @@ NAVBAR
 // // 
 
 .entry-container {
-  min-height: calc(100vh - var(--navbar-height));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../assets/wave-haikei.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
 }
 
 
@@ -75,7 +76,16 @@ NAVBAR
 // //
 
 .add-note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  height: 300px;
+  margin: auto;
   background-color: var(--off-white);
+  color: var(--black);
   padding: 2rem 1.6rem;
   border-radius: 10px;
   display: flex;
@@ -100,4 +110,43 @@ NAVBAR
     outline: none;
   }
 
+}
+
+// //
+// NOTE COMPONENT
+// //
+
+.notes-todos-container {
+  height: calc(100vh - var(--navbar-height));
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 2rem;
+  &__heading {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+}
+
+.note {
+  background-color: var(--off-white);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 5px;
+  padding: .5rem 1rem;
 }
