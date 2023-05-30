@@ -20,15 +20,25 @@ function App() {
     })
   }
 
-  console.log(notes)
+  const allNotes = notes.map(note => {
+    return <Note key={note.id} title={note.title} text={note.text} />
+  })
 
 
   return (
     <>
       <Navbar handleClick={toggleNoteOpen} />
-      <div className='notes-container'>
-        {notes.length === 0 && !isNoteOpen && <Entry handleClick={toggleNoteOpen} />}
-        {isNoteOpen && <AddNote closeNote={toggleNoteOpen} addToNotes={addToNotes} />}
+      <div className='entry-container'>
+        {notes.length === 0 && !isNoteOpen && 
+        <Entry handleClick={toggleNoteOpen} />}
+        {isNoteOpen && 
+        <AddNote 
+          closeNote={toggleNoteOpen} 
+          addToNotes={addToNotes} 
+        />}
+      </div>
+      <div className='note-container'>
+        {allNotes}
       </div>
     </>
   )

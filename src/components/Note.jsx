@@ -1,6 +1,10 @@
 
 function Note() {
-    return <div></div>
+    return (
+    <section>
+        
+    </section>
+    )
 }
 
 export default Note

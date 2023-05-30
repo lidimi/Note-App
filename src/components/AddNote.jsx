@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 
 function AddNote({ closeNote, addToNotes }) {
 
     const [note, setNote] = useState({
+        id: nanoid(),
         title: '',
         text: ''
     });
 
     function handleNoteChange(e) {
         setNote(prev => {
+            console.log(prev)
             return {
                 ...prev,
                 [e.target.name]: e.target.value
