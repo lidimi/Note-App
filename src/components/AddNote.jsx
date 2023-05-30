@@ -7,17 +7,32 @@ function AddNote({ closeNote, addToNotes }) {
     const [note, setNote] = useState({
         id: nanoid(),
         title: '',
-        text: ''
+        text: '',
+        date: ''
     });
+
+    function timeStamp() {
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+
+
+        return `${day}/${month} ${hours}:${minutes}`
+    }
 
     function handleNoteChange(e) {
         setNote(prev => {
             return {
                 ...prev,
-                [e.target.name]: e.target.value
+                [e.target.name]: e.target.value,
+                date: timeStamp()
             }
         })
     }
+
+    console.log(note)
 
     function addNoteToNotes(e) {
         e.preventDefault()

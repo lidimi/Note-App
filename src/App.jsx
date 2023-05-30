@@ -22,7 +22,7 @@ function App() {
   }
 
   const allNotes = notes.map(note => {
-    return <Note key={note.id} title={note.title} text={note.text} />
+    return <Note key={note.id} title={note.title} text={note.text} date={note.date} />
   })
 
 
