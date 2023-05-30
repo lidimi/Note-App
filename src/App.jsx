@@ -21,8 +21,13 @@ function App() {
     })
   }
 
+  function deleteNote(id) {
+    const deleted = notes.filter(note => note.id !== id);
+    setNotes(deleted)
+  }
+
   const allNotes = notes.map(note => {
-    return <Note key={note.id} title={note.title} text={note.text} date={note.date} />
+    return <Note key={note.id} id={note.id} title={note.title} text={note.text} date={note.date} handleDelete={deleteNote} />
   })
 
 
@@ -33,9 +38,9 @@ function App() {
         {isNoteOpen && <AddNote closeNote={toggleNoteOpen} addToNotes={addToNotes} />}
         <div className="notes-todos-container">
           <div className="notes-container">
-            <h2 className='notes-container__heading'>Your notes <Emoji label="notebook" symbol="📝" /> </h2>
+            <h2 className='notes-container__heading'>Your notes <Emoji label="notebook" symbol="📝" /></h2>
             <div className='notes-container__grid'>
-            {allNotes}
+              {allNotes}
             </div>
           </div>
           <div className="todos-container">

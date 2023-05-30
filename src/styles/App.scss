@@ -37,7 +37,7 @@ NAVBAR
 .navbar-button {
   text-transform: uppercase;
   padding: .8rem 2.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--blue);
   font-weight: 700;
   border: 1px solid transparent;
@@ -212,4 +212,32 @@ NAVBAR
   gap: 1rem;
   border-radius: 5px;
   padding: 1.2rem 1rem;
+
+  &:hover {
+    background-color: white;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.note-options {
+  visibility: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__button {
+    background-color: inherit;
+    filter: grayscale(100%);
+
+    &:hover {
+      cursor: pointer;
+      filter: grayscale(0%)
+    }
+  }
 }
