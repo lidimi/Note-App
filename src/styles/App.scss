@@ -68,6 +68,18 @@ NAVBAR
   height: 300px;
   margin: auto;
   text-align: center;
+
+  &__button {
+    margin: 1rem 0;
+    background-color: var(--orange);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 
@@ -84,13 +96,16 @@ NAVBAR
   width: 500px;
   height: 300px;
   margin: auto;
-  background-color: var(--off-white);
-  color: var(--black);
+  background-color: var(--dark-black);
+  color: var(--off-white);
   padding: 2rem 1.6rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
+  box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
 
   &__input {
     background-color: inherit;
@@ -99,6 +114,8 @@ NAVBAR
     border: none;
     font-weight: 700;
     outline: none;
+    color: inherit;
+    font-family: inherit;
   }
 
   &__textarea {
@@ -108,6 +125,33 @@ NAVBAR
     font-size: 1.1rem;
     border: none;
     outline: none;
+    color: inherit;
+    font-family: inherit;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__button {
+    width: 30%;
+    padding: .7rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .button-add {
+    background-color: var(--orange);
+  }
+
+  .button-discard {
+    background-color: var(--red);
   }
 
 }
@@ -159,6 +203,9 @@ NAVBAR
 
 .note {
   background-color: var(--off-white);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
+  box-shadow: 8px 8px 24px 0px rgba(13, 13, 15, 1);
   color: var(--black);
   display: flex;
   flex-direction: column;

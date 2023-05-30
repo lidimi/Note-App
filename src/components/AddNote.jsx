@@ -32,8 +32,6 @@ function AddNote({ closeNote, addToNotes }) {
         })
     }
 
-    console.log(note)
-
     function addNoteToNotes(e) {
         e.preventDefault()
         addToNotes(note)
@@ -44,7 +42,10 @@ function AddNote({ closeNote, addToNotes }) {
     <form className="add-note" onSubmit={addNoteToNotes}>
         <input required placeholder="Your title..." id="title" className="add-note__input" name="title" value={note.title} onChange={handleNoteChange}/>
         <textarea required placeholder="Your note..." rows="7" cols="50" className="add-note__textarea" name="text" value={note.text} onChange={handleNoteChange} />
-        <button className="add-note__button">Add</button>
+        <div className="add-note__buttons">
+            <button type="button" onClick={closeNote} className="add-note__button button-discard">Discard</button>
+            <button type="submit" className="add-note__button button-add">Add</button>
+        </div>
     </form>
     )
 }
